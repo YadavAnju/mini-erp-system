@@ -27,8 +27,8 @@ This is a Laravel 11-based Mini ERP system for managing **inventory and sales or
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/mini-erp.git
-cd mini-erp
+git clone https://github.com/YadavAnju/mini-erp-system.git
+cd mini-erp-system
 
 # Install dependencies
 composer install
@@ -80,9 +80,24 @@ Accept: application/json
 
 ---
 
-### Sales Order Endpoints
+### API Endpoints
 
 > All routes below require the Bearer Token in header.
+
+#### ✅ List all products
+
+```http
+GET /api/products
+```
+
+Returns all product list.
+
+#### ✅ Get Single Sales Order
+```http
+GET /api/sales-orders/{id}
+```
+
+Returns a specific order with its products and totals.
 
 #### ✅ Create Sales Order
 
@@ -120,6 +135,7 @@ POST /api/sales-orders
 ## Sample `.env` Setup
 
 ```
+APP_NAME=ERPSystem
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
